@@ -1,0 +1,63 @@
+<div class="container-contact100">
+    <div class="wrap-contact10">
+     <span class="contact100-form-title">
+        Experience Details
+    </span>
+     <form [formGroup]="expierenceSaveform" #saveexpierence (ngSubmit)="saveExpierence(saveExpierence)">
+         <div class="form-group">
+           <label for="comapny"> Previous Comapny:</label> 
+         </div>
+          <div class="">
+             <label> <input type="text" class="form-control" formControlName="previous_comapny" data-toggle="tooltip"  data-placement="right" title="Enter previous comapny name" ></label> <br><br>    
+             <div class="alert alert-danger" *ngIf = "(PreviousComapny.touched) && (PreviousComapny.invalid)" style="margin-top: 5px;">    
+              <span *ngIf="PreviousComapny.errors.required">PreviousComapny is Required</span>  
+             </div>
+          </div>
+           
+          <div class="form-group">
+            <label class="for">Technologies:</label>
+         </div>
+         <div class="">
+          <label> <input type="text" class="form-control" formControlName="technologies" data-toggle="tooltip"  data-placement="right" title="Enter technologies" ></label> <br><br>    
+          <div class="alert alert-danger" *ngIf = "(Technologies.touched) && (Technologies.invalid)" style="margin-top: 5px;">    
+           <span *ngIf="Technologies.errors.required">Technologies is Required</span>  
+          </div>
+       </div>
+      
+          <div class="form-group">
+           <label class="for">Doj:</label>
+         </div>
+          <div>
+            <label> <input type="date" class="form-control" formControlName="doj" data-toggle="tooltip"  data-placement="right" title="Enter doj" ></label> <br><br>    
+            <div class="alert alert-danger" *ngIf = "(Doj.touched) && (Doj.invalid)" style="margin-top: 5px;">    
+              <span *ngIf="Doj.errors.required">Doj is Required</span>  
+            </div>
+        </div>
+          <div class="form-group">
+           <label class="for">Doe :</label>
+         </div>
+          <div>
+            <label> <input type="date" class="form-control" formControlName="doe" data-toggle="tooltip"  data-placement="right" placeholder="Enter doe" ></label> <br><br>    
+            <div class="alert alert-danger" *ngIf = "(Doe.touched) && (Doe.invalid)" style="margin-top: 5px;">    
+             <span *ngIf="Doe.errors.required">Doe is Required</span>  
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="for">Experience:</label>
+         </div>
+          <div>
+            <label> <input type="text" class="form-control" formControlName="experience" data-toggle="tooltip"  data-placement="right" title="Enter experience" ></label> <br><br>    
+            <div class="alert alert-danger" *ngIf = "(Expierence.touched) && (Expierence.invalid)" style="margin-top: 5px;">    
+             <span *ngIf="Expierence.errors.required">Experience is Required</span>  
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+          <li><a class="btn btn-success" routerLink="/EmployeeDetails" >Previous Page</a></li> &nbsp;&nbsp;&nbsp;
+        </form>       
+   </div>
+ </div>
+
+<div [hidden]="!submitted">
+<h4>You submitted successfully!</h4>
+</div>

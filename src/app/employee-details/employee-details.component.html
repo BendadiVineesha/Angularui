@@ -1,0 +1,62 @@
+<div class="container-contact100">
+  <div class="wrap-contact10">
+   <span class="contact100-form-title">
+       Employee Details
+   </span>
+
+   <form [formGroup]="employeesaveform" #saveemployee (ngSubmit)="saveEmployee(saveEmployee)">
+       <div class="form-group">
+         <label for="Fname"> FirstName:</label> 
+       </div>
+        <div class="">
+         <label> <input type="text" class="form-control" formControlName="employee_firstName" data-toggle="tooltip"  data-placement="right" title="Enter Employee First Name" >   </label> <br><br>    
+         <div class="alert alert-danger" *ngIf = "(EmployeeFirstName.touched) && (EmployeeFirstName.invalid)" style="margin-top: 5px;">    
+           <span *ngIf="EmployeeFirstName.errors.required">EmployeeFirstName is Required</span>  
+           <span *ngIf = "EmployeeFirstName.errors.minlength">   
+               MinLength Error   
+           </span>                     
+         </div>           
+       </div>
+         
+       <div class="form-group">
+         <label for="Fname"> LastName:</label> 
+       </div>
+        <div class="">
+         <label> <input type="text" class="form-control" formControlName="employee_lastName" data-toggle="tooltip"  data-placement="right" title="Enter Employee Last Name" >   </label> <br><br>    
+         <div class="alert alert-danger" *ngIf = "(EmployeeLastName.touched) && (EmployeeLastName.invalid)" style="margin-top: 5px;">    
+           <span *ngIf="EmployeeLastName.errors.required">Employee LastName is Required</span>  
+           <span *ngIf = "EmployeeLastName.errors.minlength">   
+               MinLength Error   
+           </span>                     
+         </div>           
+       </div>
+
+       <div class="form-group">
+         <label for="Fname"> PhoneNumber:</label> 
+       </div>
+        <div class="">
+         <label> <input type="text" class="form-control" formControlName="employee_phoneNumber" data-toggle="tooltip"  data-placement="right" title="Enter Employee PhoneNumber" ></label> <br><br>    
+         <div class="alert alert-danger" *ngIf = "(EmployeePhone.touched) && (EmployeePhone.invalid)" style="margin-top: 5px;">    
+           <span *ngIf="EmployeePhone.errors.required">Employee PhoneNumber is Required</span>  
+           <span *ngIf = "EmployeePhone.errors.minlength">   
+               MinLength Error   
+           </span>                     
+         </div>           
+       </div>
+
+       <div class="form-group">
+         <label for="Fname"> Email:</label> 
+       </div>
+        <div class="">
+         <label> <input type="text" class="form-control" formControlName="employee_email" data-toggle="tooltip"  data-placement="right" title="Enter Email address" ></label> <br><br>    
+         <div class="alert alert-danger" *ngIf = "(EmployeeEmail.touched) && (EmployeeEmail.invalid)" style="margin-top: 5px;">    
+           <span *ngIf="EmployeeEmail.errors.required">Employee Email is Required</span>  
+           <span *ngIf = "EmployeeEmail.errors.minlength">   
+               MinLength Error   
+           </span>                     
+         </div>           
+       </div>  
+      <li><a class="btn btn-success" routerLink="/ExperienceDetails" >NextPage</a></li>       
+     </form>
+ </div>
+</div>
