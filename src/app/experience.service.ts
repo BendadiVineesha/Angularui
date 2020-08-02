@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ExpierenceService {
-  private baseUrl = 'http://localhost:8080/api/employees';  
+  private baseUrl = 'http://localhost:8080/api/';  
   constructor(private http:HttpClient) { }  
 
   createExperience(experience: object): Observable<object> {  
-    return this.http.post(`${this.baseUrl}`+'save-experience', experience);  
+    return this.http.post(`${this.baseUrl}`+'experienceDetails', experience);  
   }
 }

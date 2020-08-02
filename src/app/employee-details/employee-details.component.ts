@@ -22,21 +22,23 @@ export class EmployeeDetailsComponent implements OnInit {
     employee_firstName:new FormControl('' , [Validators.required ]),  
     employee_lastName:new FormControl('' , [Validators.required ]),  
     employee_phoneNumber:new FormControl('' , [Validators.required , Validators.minLength(5) ]),
-    employee_email:new FormControl('',[Validators.required,Validators.email])
+    employee_email:new FormControl('')
   });  
 
   saveEmployee(saveEmployee){  
+    console.log('first')
     this.employee=new Employee();     
-    this.employee.employee_firstName=this.EmployeeFirstName.value; 
-    this.employee.employee_lastName=this.EmployeeLastName.value;  
-    this.employee.employee_phoneNumber=this.EmployeePhone.value;  
-    this.employee.employee_email=this.EmployeeEmail.value;
+    this.employee.firstName=this.EmployeeFirstName.value; 
+    this.employee.lastName=this.EmployeeLastName.value;  
+    this.employee.phoneNumber=this.EmployeePhone.value;  
+    this.employee.email=this.EmployeeEmail.value;
     this.submitted = true;  
     this.save();  
   }  
   save() {  
-    this.employeeservice.createEmployee(this.employee)  
-      .subscribe(data => console.log(data), error => console.log(error));  
+    console.log('second')
+    this.employeeservice.createEmployee(this.employee).subscribe(data => console.log(data), error => console.log(error));  
+      console.log('third')
     this.employee = new Employee();  
   }  
   get EmployeeFirstName(){  

@@ -45,10 +45,10 @@
        </div>
 
        <div class="form-group">
-         <label for="Fname"> Email:</label> 
+         <label for="Fname"> Email:</label>         
        </div>
         <div class="">
-         <label> <input type="text" class="form-control" formControlName="employee_email" data-toggle="tooltip"  data-placement="right" title="Enter Email address" ></label> <br><br>    
+         <label> <input type="text" class="form-control" formControlName="employee_email" data-toggle="tooltip"  data-placement="right" title="Enter dob address" ></label> <br><br>    
          <div class="alert alert-danger" *ngIf = "(EmployeeEmail.touched) && (EmployeeEmail.invalid)" style="margin-top: 5px;">    
            <span *ngIf="EmployeeEmail.errors.required">Employee Email is Required</span>  
            <span *ngIf = "EmployeeEmail.errors.minlength">   
@@ -56,7 +56,7 @@
            </span>                     
          </div>           
        </div>  
-      <li><a class="btn btn-success" routerLink="/ExperienceDetails" >NextPage</a></li>       
+       <button type="submit" class="btn btn-success" routerLink="/ExperienceDetails">Submit</button>  
      </form>
  </div>
 </div>

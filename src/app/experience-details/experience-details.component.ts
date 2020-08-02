@@ -27,7 +27,7 @@ export class ExperienceDetailsComponent implements OnInit {
   });  
 
   saveExpierence(saveExpierence){
-      
+      console.log('Hello')
     this.expierence=new Expierence();     
     this.expierence.previous_comapny=this.PreviousComapny.value; 
     this.expierence.technologies=this.Technologies.value;  

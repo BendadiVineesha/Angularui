@@ -6,11 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private baseUrl = 'http://localhost:8080/api/employees';  
+  private baseUrl = 'http://localhost:8080/api/';  
   constructor(private http:HttpClient) { }  
   
   createEmployee(employee: object): Observable<object> {  
-    return this.http.post(`${this.baseUrl}`+'save-employee', employee);  
+    console.log('vamsi')
+    
+    return this.http.post(`${this.baseUrl}`+'employee', employee);  
+    
   }  
 
 }

@@ -21,5 +21,5 @@ describe('EmployeeDetailsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); 
 });
