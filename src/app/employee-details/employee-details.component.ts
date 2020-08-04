@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from './../employee.service';
+import { ApplicationService } from '../application.service';
 import {FormControl,FormGroup,Validators} from '@angular/forms'; 
 import { Employee } from './../employee'; 
+import {ActivatedRoute,Router} from '@angular/router';
 
 @Component({
   selector: 'app-employee-details',
@@ -10,7 +11,13 @@ import { Employee } from './../employee';
 })
 export class EmployeeDetailsComponent implements OnInit {
 
-  constructor(private employeeservice:EmployeeService) { }
+  constructor(private applicationService:ApplicationService,
+              private activateRoute:ActivatedRoute,
+              private router:Router){}
+
+  onButtonClick():void{
+    this.router.navigate(['/ExperienceDetails']);
+  }
 
   employee:Employee =new Employee();
   submitted=false;
@@ -21,25 +28,26 @@ export class EmployeeDetailsComponent implements OnInit {
   employeesaveform=new FormGroup({  
     employee_firstName:new FormControl('' , [Validators.required ]),  
     employee_lastName:new FormControl('' , [Validators.required ]),  
-    employee_phoneNumber:new FormControl('' , [Validators.required , Validators.minLength(5) ]),
-    employee_email:new FormControl('')
+    employee_phoneNumber:new FormControl('' , [Validators.required , Validators.minLength(5),Validators.maxLength(10)]),
+    employee_dob:new FormControl('',)
   });  
 
   saveEmployee(saveEmployee){  
-    console.log('first')
     this.employee=new Employee();     
     this.employee.firstName=this.EmployeeFirstName.value; 
     this.employee.lastName=this.EmployeeLastName.value;  
     this.employee.phoneNumber=this.EmployeePhone.value;  
-    this.employee.email=this.EmployeeEmail.value;
+    this.employee.dob=this.EmployeeDob.value;
     this.submitted = true;  
     this.save();  
   }  
   save() {  
-    console.log('second')
-    this.employeeservice.createEmployee(this.employee).subscribe(data => console.log(data), error => console.log(error));  
-      console.log('third')
-    this.employee = new Employee();  
+    this.applicationService.createEmployee(this.employee).subscribe(data =>{
+      console.log(data)
+      this.onButtonClick();
+    }) , (error =>{ 
+      console.log(error)
+    } );  
   }  
   get EmployeeFirstName(){  
     return this.employeesaveform.get('employee_firstName');  
@@ -54,8 +62,8 @@ export class EmployeeDetailsComponent implements OnInit {
   }  
 
   
-  get EmployeeEmail(){  
-    return this.employeesaveform.get('employee_email');  
+  get EmployeeDob(){  
+    return this.employeesaveform.get('employee_dob');  
   }  
   
 }

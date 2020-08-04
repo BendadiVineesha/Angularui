@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ExpierenceService } from '../experience.service';
+import { ApplicationService } from '../application.service';
 import {FormControl,FormGroup,Validators} from '@angular/forms'; 
 import { Expierence } from '../experience';
+import {ActivatedRoute,Router} from '@angular/router';
 
 @Component({
   selector: 'app-experience-details',
@@ -10,8 +11,13 @@ import { Expierence } from '../experience';
 })
 export class ExperienceDetailsComponent implements OnInit {
 
-  constructor(private expierenceService:ExpierenceService) { }
+  constructor(private applicationService:ApplicationService,
+              private activateRoute:ActivatedRoute,
+              private router:Router){}
 
+onButtonClick():void{
+this.router.navigate(['/AlternativeContacts']);
+}
   expierence:Expierence =new Expierence();
   submitted=false;
 
@@ -27,7 +33,6 @@ export class ExperienceDetailsComponent implements OnInit {
   });  
 
   saveExpierence(saveExpierence){
-      console.log('Hello')
     this.expierence=new Expierence();     
     this.expierence.previous_comapny=this.PreviousComapny.value; 
     this.expierence.technologies=this.Technologies.value;  
@@ -38,9 +43,13 @@ export class ExperienceDetailsComponent implements OnInit {
     this.save();  
   }  
   save() {  
-    this.expierenceService.createExperience(this.expierence)  
-      .subscribe(data => console.log(data), error => console.log(error));  
-    this.expierence = new Expierence();  
+    this.applicationService.createExperience(this.expierence)  
+      .subscribe(data =>{
+        console.log(data)
+        this.onButtonClick();
+   }, error => {
+     console.log(error)
+    });  
   }
   get PreviousComapny(){  
     return this.expierenceSaveform.get('previous_comapny');  

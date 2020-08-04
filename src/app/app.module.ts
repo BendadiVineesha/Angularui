@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 import { AlternativeContactsComponent } from './alternative-contacts/alternative-contacts.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeDetailsComponent,
     ExperienceDetailsComponent,
-    AlternativeContactsComponent
+    AlternativeContactsComponent,
+    EmployeeListComponent,
+
   ],
   imports: [
     BrowserModule,
