@@ -5,6 +5,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 import { AlternativeContactsComponent } from './alternative-contacts/alternative-contacts.component';
+import { CreatereferenceComponent } from './createreference/createreference.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path : 'Employeelist',component:EmployeeListComponent},
   { path: 'EmployeeDetails', component: EmployeeDetailsComponent },
   { path :'ExperienceDetails', component: ExperienceDetailsComponent},
-  { path :'AlternativeContacts', component: AlternativeContactsComponent}
+  { path :'AlternativeContacts', component: AlternativeContactsComponent},
+  { path :'Reference', component: CreatereferenceComponent}
 ];
 
 @NgModule({

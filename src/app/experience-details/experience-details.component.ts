@@ -16,7 +16,7 @@ export class ExperienceDetailsComponent implements OnInit {
               private router:Router){}
 
 onButtonClick():void{
-this.router.navigate(['/AlternativeContacts']);
+this.router.navigate(['/Reference']);
 }
   expierence:Expierence =new Expierence();
   submitted=false;
@@ -60,7 +60,7 @@ this.router.navigate(['/AlternativeContacts']);
   }  
   
   get Doj(){  
-    return this.expierenceSaveform.get('doe');  
+    return this.expierenceSaveform.get('doj');  
   }  
 
   

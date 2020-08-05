@@ -20,6 +20,10 @@ export class ApplicationService {
     return this.http.post(`${this.baseUrl}`+'alternativeContacts', alternative);  
   }
 
+  createReference(reference: object): Observable<object> {     
+    return this.http.post(`${this.baseUrl}`+'reference', reference);   
+  }
+
   getEmployeesList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`+'employees');
   }

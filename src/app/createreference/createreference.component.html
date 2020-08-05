@@ -1,0 +1,65 @@
+<div class="container-contact100">
+    <div class="wrap-contact10">
+     <span class="contact100-form-title">
+         Reference Details
+     </span>
+  
+     <form [formGroup]="referencesaveform" #savereference (ngSubmit)="saveReference(saveReference)">
+         <div class="form-group">
+           <label for="Fname"> refFirstName:</label> 
+         </div>
+          <div class="">
+           <label> <input type="text" class="form-control" formControlName="reference_firstName" data-toggle="tooltip"  data-placement="right" title="Enter Reference First Name" >   </label> <br><br>    
+           <div class="alert alert-danger" *ngIf = "(ReferenceFirstName.touched) && (ReferenceFirstName.invalid)" style="margin-top: 5px;">    
+             <span *ngIf="ReferenceFirstName.errors.required">ReferenceFirstName is Required</span>  
+             <span *ngIf = "ReferenceFirstName.errors.minlength">   
+                 MinLength Error   
+             </span>                     
+           </div>           
+         </div>
+           
+         <div class="form-group">
+           <label for="Fname"> refLastName:</label> 
+         </div>
+          <div class="">
+           <label> <input type="text" class="form-control" formControlName="reference_lastName" data-toggle="tooltip"  data-placement="right" title="Enter Reference Last Name" >   </label> <br><br>    
+           <div class="alert alert-danger" *ngIf = "(ReferenceLastName.touched) && (ReferenceLastName.invalid)" style="margin-top: 5px;">    
+             <span *ngIf="ReferenceLastName.errors.required">Reference LastName is Required</span>  
+             <span *ngIf = "ReferenceLastName.errors.minlength">   
+                 MinLength Error   
+             </span>                     
+           </div>           
+         </div>
+  
+         <div class="form-group">
+           <label for="Fname"> PhoneNumber:</label> 
+         </div>
+          <div class="">
+           <label> <input type="text" class="form-control" formControlName="reference_phoneNumber" data-toggle="tooltip"  data-placement="right" title="Enter Reference PhoneNumber" ></label> <br><br>    
+           <div class="alert alert-danger" *ngIf = "(ReferencePhone.touched) && (ReferencePhone.invalid)" style="margin-top: 5px;">    
+             <span *ngIf="ReferencePhone.errors.required">Reference PhoneNumber is Required</span>  
+             <span *ngIf = "ReferencePhone.errors.minlength">   
+                 MinLength Error   
+             </span>                     
+           </div>           
+         </div>
+         <div class="">
+            <label> <input type="text" class="form-control" formControlName="reference_email" data-toggle="tooltip"  data-placement="right" title="Enter Reference PhoneNumber" ></label> <br><br>    
+            <div class="alert alert-danger" *ngIf = "(ReferenceEmail.touched) && (ReferenceEmail.invalid)" style="margin-top: 5px;">    
+              <span *ngIf="ReferencePhone.errors.required">Reference Email is Required</span>  
+              <span *ngIf = "ReferenceEmail.errors.minlength">   
+                  MinLength Error   
+              </span>                     
+            </div>           
+          </div>
+  
+         <div class="form-group">
+           <label for="Fname">Dob:</label>         
+         </div>
+          <div class="">
+           <label> <input type="date" class="form-control" formControlName="reference_dob" data-toggle="tooltip"  data-placement="right" title="Enter dob address" ></label> <br><br>       
+         </div>  
+         <button type="submit" class="btn btn-success">Next</button>  
+       </form>
+   </div>
+  </div>

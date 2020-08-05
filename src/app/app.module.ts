@@ -8,6 +8,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 import { AlternativeContactsComponent } from './alternative-contacts/alternative-contacts.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { CreatereferenceComponent } from './createreference/createreference.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     ExperienceDetailsComponent,
     AlternativeContactsComponent,
     EmployeeListComponent,
+    CreatereferenceComponent,
 
   ],
   imports: [
